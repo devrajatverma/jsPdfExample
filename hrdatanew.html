@@ -29,7 +29,7 @@
 
             html2canvas(document.getElementById('test'), {
                 onrendered: function (canvasObj) {
-                    var pdf = new jsPDF('l', 'pt', 'a4'),
+                    var pdf = new jsPDF('P', 'pt', 'a4'),
                         pdfConf = {
                             pagesplit: false,
                             backgroundColor: '#FFF'
@@ -37,7 +37,7 @@
                     document.body.appendChild(canvasObj); //appendChild is required for html to add page in pdf
                     pdf.addHTML(canvasObj, 0, 0, pdfConf, function () {
                         document.body.removeChild(canvasObj);
-                        pdf.addPage();
+                        //pdf.addPage();
                         pdf.save('Test.pdf');
                     });
                 }
