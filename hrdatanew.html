@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        @CHARSET "UTF-8";
+
+        .page-break {
+            page-break-after: always;
+            page-break-inside: avoid;
+            clear: both;
+        }
+
+        .page-break-before {
+            page-break-before: always;
+            page-break-inside: avoid;
+            clear: both;
+        }
+    </style>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script>
+        function startPrintProcess() {
+
+            html2canvas(document.getElementById('test'), {
+                onrendered: function (canvasObj) {
+                    var pdf = new jsPDF('l', 'pt', 'a4'),
+                        pdfConf = {
+                            pagesplit: false,
+                            backgroundColor: '#FFF'
+                        };
+                    document.body.appendChild(canvasObj); //appendChild is required for html to add page in pdf
+                    pdf.addHTML(canvasObj, 0, 0, pdfConf, function () {
+                        document.body.removeChild(canvasObj);
+                        pdf.addPage();
+                        pdf.save('Test.pdf');
+                    });
+                }
+            });
+        }
+    </script>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="cmd" onclick="startPrintProcess()">generate PDF</button>
+    <div id="test" style="align-content:center;width: 90vw;background-color: whitesmoke">
+        <table style="align-self: center;margin: 0%;border: 0ch">
+            <tr>
+                <td>
+                    <div style="height:40vw; width:40vw">
+                        <canvas id="Leftdoughnut" responsive='true'></canvas>
+                    </div>
+                </td>
+                <td>
+                    <div style="height:40vw; width:40vw">
+                        <canvas id="Rightdoughnut" responsive='true'></canvas>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="height:40vw; width:40vw">
+                        <canvas id="barChart" responsive='true'></canvas>
+                    </div>
+                </td>
+                <td>
+                    <div style="height:40vw; width:40vw">
+                        <canvas id="stackChart" responsive='true'></canvas>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            var Leftdoughnut = new Chart(document.getElementById("Leftdoughnut").getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ["Registered", "Not Registered"],
+                    datasets: [
+                        {
+                            data: [70, 30],
+                            backgroundColor: [
+                                'rgba(66, 244, 72,0.3)',
+                                'rgb(244, 66, 66,0.3)'
+                            ],
+                            borderColor: [
+                                'rgba(66, 244, 72,1)',
+                                'rgba(244, 66, 66,1)'
+                            ],
+                            borderWidth: 1
+                        }
+                    ],
+                },
+                options: {
+                    legend: {
+                        position: "bottom"
+                    },
+                    title: {
+                        display: true,
+                        text: "Usre Registration"
+                    }
+                }
+            });
+            var Rightdoughnut = new Chart(document.getElementById("Rightdoughnut").getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ["Android", "iOS"],
+                    datasets: [
+                        {
+                            data: [70, 30],
+                            backgroundColor: [
+                                'rgba(66, 244, 72,0.3)',
+                                'rgb(244, 66, 66,0.3)'
+                            ],
+                            borderColor: [
+                                'rgba(66, 244, 72,1)',
+                                'rgba(244, 66, 66,1)'
+                            ],
+                            borderWidth: 1
+                        }
+                    ],
+                },
+                options: {
+                    legend: {
+                        position: "bottom"
+                    },
+                    title: {
+                        display: true,
+                        text: "Androind Vs iOS"
+                    }
+                }
+            });
+            var barChart = new Chart(document.getElementById("barChart").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "Post,Like,comments"
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            var barChart = new Chart(document.getElementById("stackChart").getContext('2d'), {
+                type: 'horizontalBar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "Post,Like,comments"
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+        <h1>Adding more things in order to test what happen on large pages</h1>
+        <p>
+            Next up, we dive into CSS syntax in a lot more detail, looking at how properties and their values form into declarations, multiple declarations form into declaration blocks, and declaration blocks and selectors form into complete CSS rules. We round off the article by looking at other CSS syntax features such as comments and whitespace.
+        </p>
+        <br><br>
+        <p>
+
+        </p>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+        <br><br>
+        <p>
+            A property paired with a value is called a CSS declaration. CSS declarations are put within CSS Declaration Blocks. And finally, CSS declaration blocks are paired with selectors to produce CSS Rulesets (or CSS Rules).
+
+Before getting too deep in theory and written explanation, let's look at a concrete example (we saw something very similar in our previous article.)
+        </p>
+        <br><br> 
+        <p>
+            Setting CSS properties to specific values is the core function of the CSS language. The CSS engine calculates which declarations apply to every single element of a page in order to appropriately lay it out and style it. What is important to remember is that both properties and values are case-sensitive in CSS. The property and value in each pair is separated by a colon (:).
+        </p>
+        <img src="dovapi.jpg" alt="" height="600vw" width="600vw">
+    </div>
+</body>
+
+</html>
