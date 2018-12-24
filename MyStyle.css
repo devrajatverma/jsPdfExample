@@ -1,4 +1,4 @@
-.page-break {
+/* .page-break {
     page-break-after: always;
     page-break-inside: avoid;
     clear: both;
@@ -8,25 +8,44 @@
     page-break-before: always;
     page-break-inside: avoid;
     clear: both;
-}
+} */
 
 body {
     background-color: whitesmoke;
 }
 
-table {
+canvas{
+    responsive:true;
+    responsiveAnimationDuration:500;
+    maintainAspectRatio:true;
+    aspectRatio:1;
+}
+
+table.skeleton {
+    border: 10px;
     margin: 0px;
-    empty-cells: show;
-    /* Change to "hide" if you prefer*/
-    border-collapse: collapse;
+    border-collapse: unset;
     border-spacing: 0px;
 }
 
-td {
-    text-align: center;
+p.centerParaGraph{
+    text-align:left;
     vertical-align:top;
+    font-size: 30px;
+    color:rgb(19, 233, 204);
+    margin: 2%;
 }
 
-tr {
+/* .material table {
+    border-collapse: collapse;
+    width: 100%;
+  } */
+  
+.material th, td {
+    text-align: left;
     padding: 0px;
-}
+  }
+  
+/* .material tr:nth-child(even) {
+    background-color: #f2f2f2;
+} */
