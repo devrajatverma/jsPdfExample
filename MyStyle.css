@@ -1,0 +1,32 @@
+.page-break {
+    page-break-after: always;
+    page-break-inside: avoid;
+    clear: both;
+}
+
+.page-break-before {
+    page-break-before: always;
+    page-break-inside: avoid;
+    clear: both;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+table {
+    margin: 0px;
+    empty-cells: show;
+    /* Change to "hide" if you prefer*/
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+td {
+    text-align: center;
+    vertical-align:top;
+}
+
+tr {
+    padding: 0px;
+}
