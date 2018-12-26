@@ -35,83 +35,66 @@
 
 <body>
     <div id="printingArea">
-        <img src="marks_and_spencer_logo.png" style="height:4vw;width:10vw;position: absolute;left: 60px;top: 15px" />
-        <img src="feetapart_logo.png" style="height:4vw;width:30vw;float:right" />
+        <img src="marks_and_spencer_logo.png" style="height:12vh;width:15vw;position: absolute;left: 2vw;top: 2vh" />
+        <img src="feetapart_logo.png" style="height:10vh;width:20vw;float:right;position: absolute;right: 2vw;top: 1vh" />
         <img src="print.png" alt="print" onclick="window.print()" style="
         left: 0vw;
         top: 30%;
         position: fixed;
         opacity: 0.5;
         height: 40px;
-        width:40px;" class="noprint"/>
+        width:40px;"
+        class="noprint" />
         <div id="test">
             <table class="skeleton">
                 <tr>
-                    <td colspan='2'  >
-                        <center><h1>#M&S_ILikeToMoveIt Analytics</h1></center>
+                    <td colspan='2'>
+                            <h1 style="font-size:4vw;text-align: center;position: relative;top: 10vh;">#M&S_ILikeToMoveIt Analytics</h1>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <br><br><br>
-                        <h2 style="text-align: center;color: black;">
+                        <h3 style="text-align: center;position: relative;top: 6vh;">
                             62.5% Participants registered of total 1788 employees of which 71% of them are Android and
                             29% iOS users
-                        </h2>
-                        <br><br><br>
+                        </h3>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div style="position: relative; height:45vh; width:45vw;">
+                        <div class="twoColCanvasCircle">
                             <canvas id="UserRegistration"></canvas>
                         </div>
                     </td>
                     <td>
-                        <div style="position: relative; height:45vh; width:45vw;">
+                        <div class="twoColCanvasCircle">
                             <canvas id="AndroidIos" responsive='true'></canvas>
                         </div>
                     </td>
                 <tr>
-                    <td>
-                        <p class="centerParaGraph">
-                            <br><br>
-                            We ensure that participants have the flexibility to chose a Pedometer of their choice.
-                            This makes it easier for them to record and track their steps.
-                        </p>
-                    </td>
-                    <td>
-                        <div style="position: relative; height:40vh; width:40vw;margin: 5%">
-                            <canvas id="Pedometer" responsive='true'></canvas>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="2">
-                        <div style="height:60vh; width:50vw;">
+                        <div class="oneColCanvas">
                             <canvas id="steps" responsive='true'></canvas>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <p class="centerParaGraph" >
-                            <br><br>
+                    <td class="text">
+                        <p class="centerParaGraph">
                             Participants shared 1352 posts in November 2018.
-                            Vignesh V (126 posts) , Pradeep Singh(62)
-                            and Gyan Prakash (55) were the most active
+                            Vignesh V (126 posts) , Pradeep Singh(62) and Gyan Prakash (55) were the most active
                             participants on the FeetApart social media feed.
                         </p>
                     </td>
                     <td>
-                        <div style="position: relative; height:40vh; width:40vw;margin: 5%">
+                        <div class="twoColCanvas">
                             <canvas id="usageStatistics" responsive='true'></canvas>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td  class="text">
                         <p class="centerParaGraph">
                             Participants took up various activities
                             forms of physical activities during the
@@ -121,61 +104,60 @@
                         </p>
                     </td>
                     <td>
-                        <div style="position: relative; height:40vh; width:40vw;">
+                        <div class="twoColCanvas">
                             <canvas id="activitiesByParticipants" responsive='true'></canvas>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td >
-                        <p class="centerParaGraph" >
-
+                    <td class="text">
+                        <p class="centerParaGraph">
                             On an average, participants have spent
                             more than 60 minutes doing various
                             activities.
                         </p>
                     </td>
-                    <td>                        
-                        <div style="position: relative; height:50vh; width:45vw;">
+                    <td>
+                        <div class="twoColCanvas" style="height:50vh;width:50;">
                             <canvas id="averageTimeSpentExcercising" responsive='true'></canvas>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="text">
                         <p class="centerParaGraph">
-                                <br><br><br>
                             Total Calories Burnt for the month of November is
                             more than 3.2 Million calories.
                         </p>
                     </td>
                     <td>
-                        <div style="position: relative; height:40vh; width:40vw;">
+                        <div class="twoColCanvas" style="height:50vh;width:50;">
                             <canvas id="caloriesBrunt" responsive='true'></canvas>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td colspan="2" style="align-content:center">
+                    <td colspan="2" style="position:relative;left: 2vw">
                         <table style="width:95vw;height:15vw;border: gray double">
-                            <caption><h3><u>BMI details<u></u></h3></caption>
+                            <caption>
+                                <h3><u>BMI details<u></u></h3>
+                            </caption>
                             <tr>
                                 <th>Details</th>
                                 <th>Organisation wide BMI</th>
                                 <th class="material">Employees</th>
                             </tr>
                             <tr style="background-color: #c2c2c2;">
-                                <td>underweight : < 18.5 </td>
-                                <td>5% of Employees</td>
+                                <td>underweight : < 18.5 </td> <td>5% of Employees</td>
                                 <td>89</td>
                             </tr>
-                            <tr >
+                            <tr>
                                 <td>healthy weight : 18.5 - 24.9</td>
                                 <td>58% of Employees</td>
                                 <td>1037</td>
                             </tr>
-                            <tr style="background-color: #c2c2c2;"  >
+                            <tr style="background-color: #c2c2c2;">
                                 <td>overweight : 25.0 - 29.9</td>
                                 <td>29% of Employees</td>
                                 <td>519</td>
@@ -206,24 +188,38 @@
                         </table>
                     </td>
                     <td>
-                        <div style="height:40vh; width:40vw;margin: 5%;">
+                        <div class="twoColCanvas">
                             <canvas id="averageMood" responsive='true'></canvas>
                     </td>
                 </tr>
                 <tr>
+                        <td class="text">
+                            <p class="centerParaGraph"> 
+                                We ensure that participants have the flexibility to chose a Pedometer of their choice.
+                                This makes it easier for them to record and track their steps.
+                            </p>
+                        </td>
+                        <td>
+                            <div class="twoColCanvas">
+                                <canvas id="Pedometer" responsive='true'></canvas>
+                            </div>
+                        </td>
+                    </tr>
+                <tr>
                     <td colspan="2">
-                            <div style="height:40vh; width:40vw;margin: 5%">
-                                    <canvas id="waterIntake" responsive='true'></canvas>
+                        <div class="oneColCanvas">
+                            <canvas id="waterIntake" responsive='true'></canvas>
                     </td>
                 </tr>
             </table>
             </td>
             <td>
-                <div style="height:60vh; width:60vw;">
+                <div class="twoColCanvas">
                     <canvas id="caloriesBrunt" responsive='true'></canvas>
                 </div>
             </td>
             </tr>
+            
             </table>
         </div>
         <script>
@@ -235,12 +231,12 @@
                         {
                             data: [62.5, 100 - 62.5],
                             backgroundColor: [
-                                'rgba(66, 244, 72,0.3)',
-                                'rgb(244, 66, 66,0.3)'
+                                '#00cc66',
+                                '#cc0000'
                             ],
                             borderColor: [
-                                'rgba(66, 244, 72,1)',
-                                'rgba(244, 66, 66,1)'
+                                "#00ff00",
+                                '#ff3300'
                             ],
                             borderWidth: 1
                         }
@@ -252,7 +248,7 @@
                     },
                     title: {
                         display: true,
-                        text: "Usre Registration"
+                        text: "User Registration"
                     }
                 }
             });
@@ -265,12 +261,12 @@
                         {
                             data: [71, 100 - 71],
                             backgroundColor: [
-                                'rgba(66, 244, 72,0.3)',
-                                'rgb(244, 66, 66,0.3)'
+                                '#00cc66',
+                                '#cc0000'
                             ],
                             borderColor: [
-                                'rgba(66, 244, 72,1)',
-                                'rgba(244, 66, 66,1)'
+                                "#00ff00",
+                                '#ff3300'
                             ],
                             borderWidth: 1
                         }
@@ -282,7 +278,7 @@
                     },
                     title: {
                         display: true,
-                        text: "Androind Vs iOS"
+                        text: "Android Vs iOS"
                     }
                 }
             });
@@ -295,28 +291,19 @@
                         label: "",
                         data: [2.6, 10.6, 30.1, 56.7],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
+                            'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        ]
                     }]
                 },
                 options: {
                     title: {
                         display: true,
-                        text: "Pedometer used and organisation wide average steps"
+                        text: "Pedometer used and organisation wise average steps"
                     },
                     label: {
                         display: false
@@ -339,28 +326,19 @@
                         label: "",
                         data: [12, 19, 3, 5, 2, 3],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
+                            'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        ]
                     }]
                 },
                 options: {
                     title: {
                         display: true,
-                        text: "Organizatino wise steps"
+                        text: "Organisation wise steps"
                     },
                     scales: {
                         yAxes: [{
@@ -380,22 +358,13 @@
                         label: "",
                         data: [12, 19, 3, 5, 2, 3],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
+                            'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        ]
                     }]
                 },
                 options: {
@@ -422,22 +391,13 @@
                         label: "",
                         data: [12, 19, 3, 5, 2, 3],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
+                            'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        ]
                     }]
                 },
                 options: {
@@ -464,22 +424,13 @@
                         label: "",
                         data: [12, 19, 3, 5, 2, 3],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
+                            'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        ]
                     }]
                 },
                 options: {
@@ -506,22 +457,13 @@
                         label: "",
                         data: [12, 19, 3, 5, 2, 3],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
+                            'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        ]
                     }]
                 },
                 options: {
@@ -548,29 +490,19 @@
                         label: "",
                         data: [12, 19, 3, 5, 2, 3],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
+                            'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        ]
                     }]
                 },
                 options: {
-
                     title: {
                         display: true,
-                        text: "Water Intage (in ml) "
+                        text: "Water Intake (in ml)"
                     },
                     scales: {
                         yAxes: [{
@@ -590,22 +522,13 @@
                         label: "",
                         data: [12, 19, 3, 5, 2, 3],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
+                            'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        ]
                     }]
                 },
                 options: {
@@ -626,4 +549,5 @@
 
         </script>
 </body>
+
 </html>

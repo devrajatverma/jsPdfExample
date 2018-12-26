@@ -31,38 +31,55 @@ canvas{
     aspectRatio:1;
 }
 
+div.twoColCanvasCircle{
+    position: relative;
+    height:48vh;
+    width: 48vw;
+    margin-top: 5vh;
+}
+
+div.twoColCanvas{
+    position: relative;
+    height:50vh;
+    width: 50vw;
+    margin-top: 5vh;
+}
+
+div.oneColCanvas{
+    position: relative;
+    height:80vh;
+    width: 80vw;
+    margin-top: 5vh;
+}
+
 table.skeleton {
-    height: 98vh;
-    width: 98vw;
-    border: 0px;
-    margin: 0px;
     border-collapse: collapse;
     border-spacing: 0px;
 }
 
-td {
-    text-align: center; 
-    vertical-align: top;
+td.text {
+    height: 20vh;
+    width: 20vw;
 }
 
 p.centerParaGraph{
-    text-align:center;
+    text-align:left;
     vertical-align: top;
     font-size: 25px;
-    color:rgb(19, 233, 204);
-    margin: 2%;
+    color:#0099cc;
+    margin: 10%;
 }
-
-/* .material table {
-    border-collapse: collapse;
-    width: 100%;
-  } */
   
 .material th, td {
     text-align: left;
     padding: 0px;
   }
-  
+
+/* .material table {
+    border-collapse: collapse;
+    width: 100%;
+  } */
+
 /* .material tr:nth-child(even) {
     background-color: #f2f2f2;
 } */
