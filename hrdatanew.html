@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="MyStyle.css" />
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
@@ -12,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
     <script>
         function startPrintProcess() {
-            html2canvas(document.getElementById('test'), {
+            html2canvas(document.getElementById('printingArea'), {
                 onrendered: function (canvasObj) {
                     var pdf = new jsPDF('P', 'pt', 'a4'),
                         pdfConf = {
@@ -30,425 +32,598 @@
         }
     </script>
 </head>
+
 <body>
-    <div>
-        <img src="marks_and_spencer_logo.png" style="height:6vw;width:20vw;float:left" />
-        <img src="feetapart_logo.png" style="height:6vw;width:20vw;float:right" />
-        <div id="test" style="align-content:center;width: 90vw;">
-            <table>
-                <tr >
-                    <td colspan='2' height='50vw' align='center'>
-                        <h1>#M&S_ILikeToMoveIt Analytics</h1>
+    <div id="printingArea">
+        <img src="marks_and_spencer_logo.png" style="height:4vw;width:10vw;position: absolute;left: 60px;top: 15px" />
+        <img src="feetapart_logo.png" style="height:4vw;width:30vw;float:right" />
+        <img src="print.png" alt="print" onclick="window.print()" style="
+        left: 0vw;
+        top: 30%;
+        position: fixed;
+        opacity: 0.5;
+        height: 40px;
+        width:40px;" class="noprint"/>
+        <div id="test">
+            <table class="skeleton">
+                <tr>
+                    <td colspan='2'  >
+                        <center><h1>#M&S_ILikeToMoveIt Analytics</h1></center>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" align='center'>
-                        <h3>
-                            62.5% participants registered of total 1788 employees of which 71% of them are Android and
+                    <td colspan="2">
+                        <br><br><br>
+                        <h2 style="text-align: center;color: black;">
+                            62.5% Participants registered of total 1788 employees of which 71% of them are Android and
                             29% iOS users
-                        </h3>
+                        </h2>
+                        <br><br><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div style="height:48vw; width:48vw">
-                            <canvas id="UserRegistration" responsive='true'></canvas>
+                        <div style="position: relative; height:45vh; width:45vw;">
+                            <canvas id="UserRegistration"></canvas>
                         </div>
                     </td>
                     <td>
-                        <div style="height:48vw; width:48vw">
+                        <div style="position: relative; height:45vh; width:45vw;">
                             <canvas id="AndroidIos" responsive='true'></canvas>
                         </div>
                     </td>
-                </tr>
                 <tr>
-                    <td colspan="2" align='center'>
-                        <h3 height='10vw'>Pedometer used and organisation wide average steps</h3>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:100px">
-                        <p style="font-size: 2vw;color:greenyellow;">
+                    <td>
+                        <p class="centerParaGraph">
+                            <br><br>
                             We ensure that participants have the flexibility to chose a Pedometer of their choice.
                             This makes it easier for them to record and track their steps.
                         </p>
                     </td>
                     <td>
-                        <div style="height:48vw; width:48vw">
+                        <div style="position: relative; height:40vh; width:40vw;margin: 5%">
                             <canvas id="Pedometer" responsive='true'></canvas>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align:middle">
-                        <div style="height:15vw; width:80vw;padding: 3vw">
+                    <td colspan="2">
+                        <div style="height:60vh; width:50vw;">
                             <canvas id="steps" responsive='true'></canvas>
                         </div>
                     </td>
-                    <td>
+                </tr>
 
+                <tr>
+                    <td>
+                        <p class="centerParaGraph" >
+                            <br><br>
+                            Participants shared 1352 posts in November 2018.
+                            Vignesh V (126 posts) , Pradeep Singh(62)
+                            and Gyan Prakash (55) were the most active
+                            participants on the FeetApart social media feed.
+                        </p>
+                    </td>
+                    <td>
+                        <div style="position: relative; height:40vh; width:40vw;margin: 5%">
+                            <canvas id="usageStatistics" responsive='true'></canvas>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="centerParaGraph">
+                            Participants took up various activities
+                            forms of physical activities during the
+                            period. Walking, Gym workout,
+                            Running and push ups were the top
+                            five activities.
+                        </p>
+                    </td>
+                    <td>
+                        <div style="position: relative; height:40vh; width:40vw;">
+                            <canvas id="activitiesByParticipants" responsive='true'></canvas>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <p class="centerParaGraph" >
+
+                            On an average, participants have spent
+                            more than 60 minutes doing various
+                            activities.
+                        </p>
+                    </td>
+                    <td>                        
+                        <div style="position: relative; height:50vh; width:45vw;">
+                            <canvas id="averageTimeSpentExcercising" responsive='true'></canvas>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="centerParaGraph">
+                                <br><br><br>
+                            Total Calories Burnt for the month of November is
+                            more than 3.2 Million calories.
+                        </p>
+                    </td>
+                    <td>
+                        <div style="position: relative; height:40vh; width:40vw;">
+                            <canvas id="caloriesBrunt" responsive='true'></canvas>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="align-content:center">
+                        <table style="width:95vw;height:15vw;border: gray double">
+                            <caption><h3><u>BMI details<u></u></h3></caption>
+                            <tr>
+                                <th>Details</th>
+                                <th>Organisation wide BMI</th>
+                                <th class="material">Employees</th>
+                            </tr>
+                            <tr style="background-color: #c2c2c2;">
+                                <td>underweight : < 18.5 </td>
+                                <td>5% of Employees</td>
+                                <td>89</td>
+                            </tr>
+                            <tr >
+                                <td>healthy weight : 18.5 - 24.9</td>
+                                <td>58% of Employees</td>
+                                <td>1037</td>
+                            </tr>
+                            <tr style="background-color: #c2c2c2;"  >
+                                <td>overweight : 25.0 - 29.9</td>
+                                <td>29% of Employees</td>
+                                <td>519</td>
+                            </tr>
+                            <tr>
+                                <td>obese : > 30 </td>
+                                <td>8% of Employees</td>
+                                <td>143</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:30vw;border:solid grey;margin: 20%">
+                            <tr>
+                                <td>Very Good</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>Good</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>Blah</td>
+                                <td>6</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <div style="height:40vh; width:40vw;margin: 5%;">
+                            <canvas id="averageMood" responsive='true'></canvas>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                            <div style="height:40vh; width:40vw;margin: 5%">
+                                    <canvas id="waterIntake" responsive='true'></canvas>
                     </td>
                 </tr>
             </table>
-
-            <script>
-                new Chart(document.getElementById("UserRegistration").getContext('2d'), {
-                    type: 'doughnut',
-                    data: {
-                        labels: ["Registered", "Not Registered"],
-                        datasets: [
-                            {
-                                data: [62.5, 100 - 62.5],
-                                backgroundColor: [
-                                    'rgba(66, 244, 72,0.3)',
-                                    'rgb(244, 66, 66,0.3)'
-                                ],
-                                borderColor: [
-                                    'rgba(66, 244, 72,1)',
-                                    'rgba(244, 66, 66,1)'
-                                ],
-                                borderWidth: 1
-                            }
-                        ],
-                    },
-                    options: {
-                        legend: {
-                            position: "bottom"
-                        },
-                        title: {
-                            display: true,
-                            text: "Usre Registration"
-                        }
-                    }
-                });
-                new Chart(document.getElementById("AndroidIos").getContext('2d'), {
-                    type: 'doughnut',
-                    data: {
-                        labels: ["Android", "iOS"],
-                        datasets: [
-                            {
-                                data: [71, 100 - 71],
-                                backgroundColor: [
-                                    'rgba(66, 244, 72,0.3)',
-                                    'rgb(244, 66, 66,0.3)'
-                                ],
-                                borderColor: [
-                                    'rgba(66, 244, 72,1)',
-                                    'rgba(244, 66, 66,1)'
-                                ],
-                                borderWidth: 1
-                            }
-                        ],
-                    },
-                    options: {
-                        legend: {
-                            position: "bottom"
-                        },
-                        title: {
-                            display: true,
-                            text: "Androind Vs iOS"
-                        }
-                    }
-                });
-                var Pedometer = new Chart(document.getElementById("Pedometer").getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: ["FitBit", "FeetApart", "Apple", "Google Fit"],
-                        datasets: [{
-                            label: "",
-                            data: [2.6, 10.6, 30.1, 56.7],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        label: {
-                            display: false
-                        },
-                        title: {
-                            display: false,
-                            text: ""
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-                var steps = new Chart(document.getElementById("steps").getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
-                        datasets: [{
-                            label: "",
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-
-                        title: {
-                            display: true,
-                            text: "Organizatino wise steps"
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-
-                var steps = new Chart(document.getElementById("steps").getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
-                        datasets: [{
-                            label: "",
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-
-                        title: {
-                            display: true,
-                            text: "Number of Posts by The Organizatino"
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-
-                var steps = new Chart(document.getElementById("steps").getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
-                        datasets: [{
-                            label: "",
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-
-                        title: {
-                            display: true,
-                            text: "Organizatino wise steps"
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-
-                var steps = new Chart(document.getElementById("steps").getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
-                        datasets: [{
-                            label: "",
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-
-                        title: {
-                            display: true,
-                            text: "Organizatino wise steps"
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-
-                var steps = new Chart(document.getElementById("steps").getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
-                        datasets: [{
-                            label: "",
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-
-                        title: {
-                            display: true,
-                            text: "Organizatino wise steps"
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-
-                var steps = new Chart(document.getElementById("steps").getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
-                        datasets: [{
-                            label: "",
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-
-                        title: {
-                            display: true,
-                            text: "Organizatino wise steps"
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-
-            </script>
+            </td>
+            <td>
+                <div style="height:60vh; width:60vw;">
+                    <canvas id="caloriesBrunt" responsive='true'></canvas>
+                </div>
+            </td>
+            </tr>
+            </table>
         </div>
+        <script>
+            new Chart(document.getElementById("UserRegistration").getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ["Registered", "Not Registered"],
+                    datasets: [
+                        {
+                            data: [62.5, 100 - 62.5],
+                            backgroundColor: [
+                                'rgba(66, 244, 72,0.3)',
+                                'rgb(244, 66, 66,0.3)'
+                            ],
+                            borderColor: [
+                                'rgba(66, 244, 72,1)',
+                                'rgba(244, 66, 66,1)'
+                            ],
+                            borderWidth: 1
+                        }
+                    ],
+                },
+                options: {
+                    legend: {
+                        position: "bottom"
+                    },
+                    title: {
+                        display: true,
+                        text: "Usre Registration"
+                    }
+                }
+            });
 
-        <button id="cmd" onclick="startPrintProcess()">generate PDF</button>
+            new Chart(document.getElementById("AndroidIos").getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ["Android", "iOS"],
+                    datasets: [
+                        {
+                            data: [71, 100 - 71],
+                            backgroundColor: [
+                                'rgba(66, 244, 72,0.3)',
+                                'rgb(244, 66, 66,0.3)'
+                            ],
+                            borderColor: [
+                                'rgba(66, 244, 72,1)',
+                                'rgba(244, 66, 66,1)'
+                            ],
+                            borderWidth: 1
+                        }
+                    ],
+                },
+                options: {
+                    legend: {
+                        position: "bottom"
+                    },
+                    title: {
+                        display: true,
+                        text: "Androind Vs iOS"
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("Pedometer").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["FitBit", "FeetApart", "Apple", "Google Fit"],
+                    datasets: [{
+                        label: "",
+                        data: [2.6, 10.6, 30.1, 56.7],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "Pedometer used and organisation wide average steps"
+                    },
+                    label: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("steps").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        label: "",
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "Organizatino wise steps"
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("usageStatistics").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        label: "",
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                    title: {
+                        display: true,
+                        text: "FeetApart Social Feed Usage Statistics"
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("activitiesByParticipants").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        label: "",
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                    title: {
+                        display: true,
+                        text: "Activities By Participants"
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("averageTimeSpentExcercising").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        label: "",
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                    title: {
+                        display: true,
+                        text: "Average Time Spent Excercising"
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("caloriesBrunt").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        label: "",
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                    title: {
+                        display: true,
+                        text: "Calories Brunt"
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("waterIntake").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        label: "",
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                    title: {
+                        display: true,
+                        text: "Water Intage (in ml) "
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            new Chart(document.getElementById("averageMood").getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ["14-Nov", "15-Nov", "16-Nov", "17-Nov", "18-Nov", "19-Nov"],
+                    datasets: [{
+                        label: "",
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                    title: {
+                        display: true,
+                        text: "Average Mood"
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+        </script>
 </body>
-
 </html>

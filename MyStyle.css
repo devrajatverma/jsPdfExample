@@ -14,6 +14,16 @@ body {
     background-color: whitesmoke;
 }
 
+#printingArea{
+    background: whitesmoke;
+}
+
+@media print{
+    .noprint{
+        display:none;
+    }
+ }
+
 canvas{
     responsive:true;
     responsiveAnimationDuration:500;
@@ -22,16 +32,23 @@ canvas{
 }
 
 table.skeleton {
-    border: 10px;
+    height: 98vh;
+    width: 98vw;
+    border: 0px;
     margin: 0px;
-    border-collapse: unset;
+    border-collapse: collapse;
     border-spacing: 0px;
 }
 
+td {
+    text-align: center; 
+    vertical-align: top;
+}
+
 p.centerParaGraph{
-    text-align:left;
-    vertical-align:top;
-    font-size: 30px;
+    text-align:center;
+    vertical-align: top;
+    font-size: 25px;
     color:rgb(19, 233, 204);
     margin: 2%;
 }
